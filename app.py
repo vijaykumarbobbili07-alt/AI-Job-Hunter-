@@ -18,3 +18,23 @@ def health():
     return {
         "status": "healthy"
     }
+
+@app.get("/jobs")
+def jobs():
+    return [
+        {
+            "company": "Microsoft",
+            "role": "Power BI Developer",
+            "location": "Bangalore"
+        },
+        {
+            "company": "Accenture",
+            "role": "Data Analyst",
+            "location": "Hyderabad"
+        },
+        {
+            "company": "Deloitte",
+            "role": "BI Developer",
+            "location": "Chennai"
+        }
+    ]
