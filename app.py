@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from jobs import get_jobs
 
 app = FastAPI(
     title="AI Job Hunter",
@@ -21,20 +22,4 @@ def health():
 
 @app.get("/jobs")
 def jobs():
-    return [
-        {
-            "company": "Microsoft",
-            "role": "Power BI Developer",
-            "location": "Bangalore"
-        },
-        {
-            "company": "Accenture",
-            "role": "Data Analyst",
-            "location": "Hyderabad"
-        },
-        {
-            "company": "Deloitte",
-            "role": "BI Developer",
-            "location": "Chennai"
-        }
-    ]
+    return get_jobs()
